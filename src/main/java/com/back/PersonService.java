@@ -3,6 +3,7 @@ package com.back;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class PersonService {
@@ -13,6 +14,7 @@ public class PersonService {
         this.personRepository = personRepository;
     }
 
+    @Transactional
     public int count(){
         return personRepository.count();
     }
